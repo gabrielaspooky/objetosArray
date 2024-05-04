@@ -1,16 +1,44 @@
 // 1.- Crea una variable que tenga como valor un array vacío.
 
-const userName = []
+const userName = [];
 
 // 2.- Crea una variable que tenga como valor un array con al menos 3 tipos de datos distintos.
 
-let catProperties = [Fígaro, 12, true]
+let catProperties = [Fígaro, 12, true];
 
 // 3.- 
 //          3.1.- Crea un array vacío y añádele dos valores usando push(), dos valores usando unshift() y luego usa pop() y shift() una vez. A continuación, muestra por consola la longitud del array.
+
+let videoGameConsoles = [];
+videoGameConsoles.push('Nintendo DS', 'PlayStation 5');
+videoGameConsoles.unshift('Game Cube', 'X-BOX 360');
+videoGameConsoles.pop();
+videoGameConsoles.shift()
+console.log(videoGameConsoles);
+console.log(videoGameConsoles.length);
+
+
 //          3.2.- Crea un array classNames con todos los nombres de tus compañer@s de clase. Muestra por consola tu nombre seleccionando el que hay en el array classNames.
 
+let classNames = ['Adriana', 
+'Andrea',
+'Jesús Alemán',
+'Jesús Raad',
+'Javmir',
+'Roger',
+]
+
+classNames.push('Gabriela')
+
+console.log(classNames[6]);
+
 // 4.- Crea el siguiente array: const names = ["Carlos", "María", "Isidro", "Elizondo", "Molina"]. A continuación, muestra por consola los nombres ["María, Isidro"] usando slice(). Luego, sustituye "Elizondo" por "Parma" usando splice() y muestra el resultados por consola.
+
+const names = ["Carlos", 
+"María",
+"Isidro",
+"Elizondo", 
+"Molina"]
 
 // 5.- Convierte el array anterior (names) en un string de nombres separados por espacios.
 
