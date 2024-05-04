@@ -40,9 +40,29 @@ const names = ["Carlos",
 "Elizondo", 
 "Molina"]
 
+console.log(names.slice(1, 3));
+names.splice(3, 1, 'Parma');
+console.log(names);
+
 // 5.- Convierte el array anterior (names) en un string de nombres separados por espacios.
 
+const names = ["Carlos", 
+"María",
+"Isidro",
+"Elizondo", 
+"Molina"]
+
+names.join(' ')
+
+
 // 6.- Crea la variable const sentence = "El perro de San Roque no tiene rabo". A continuación, conviértela en un array de palabras, y, luego, en otro de letras.
+
+const sentence = "El perro de San Roque no tiene rabo.";
+
+sentence.split(' ');
+
+sentence.split('');
+
 
 // 7.- Diseña un programa (función) que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico. ( permite detectar valores no numéricos).
 
