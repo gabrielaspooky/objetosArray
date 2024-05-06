@@ -66,9 +66,48 @@ sentence.split('');
 
 // 7.- Diseña un programa (función) que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico. ( permite detectar valores no numéricos).
 
-function numberReading(numbers) {
-    
+const arrayMaxSize = 6; // Representa el máximo de números con el que puedo llenar mi array.
+let numbersArray = [];
+
+function addNumbers() {
+    let input;
+    let countPares = 0;
+    let countImpares = 0;
+
+    for (let i = 0; i < arrayMaxSize; i++) {
+        input = prompt("Ingresa un número:");
+        
+        if (!isNaN(input) && input !== null && input !== '') {
+            let number = parseInt(input);
+            numbersArray.push(number);
+
+            if (number === 0) {
+                break;
+            }
+
+            if (number % 2 === 0) {
+                countPares++;
+            } else {
+                countImpares++;
+            }
+        } else {
+            alert("Entrada inválida.");
+            break; 
+        }
+    }
+
+    if (numbersArray.length === arrayMaxSize) {
+        alert("Se alcanzó el límite máximo de números.");
+    }
+
+    alert("¡Gracias por completar el ejercicio!" + numbersArray.join(', '));
+    alert("Cantidad de números pares: " + countPares);
+    alert("Cantidad de números impares: " + countImpares);
 }
+
+addNumbers();
+
+
 
 // 8.- Un servicio de atención al cliente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio una persona: Lunes - María; Martes - Luis; Miércoles - Antonia; Jueves - Pedro; Viernes - Marisa; Sábado y Domingo - Sin Servicio. Usa un array para almacenar los datos del servicio. En este array cada elemento será un par [día - nombre]. Crea una función que responda con el nombre de la persona encargada del servicio sabiendo el día. Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido servicio(Miércoles") me daría Antonia.
 
