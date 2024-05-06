@@ -100,7 +100,7 @@ function addNumbers() {
         alert("Se alcanzó el límite máximo de números.");
     }
 
-    alert("¡Gracias por completar el ejercicio!" + numbersArray.join(', '));
+    alert("¡Gracias por completar el ejercicio! " + numbersArray.join(', '));
     alert("Cantidad de números pares: " + countPares);
     alert("Cantidad de números impares: " + countImpares);
 }
@@ -111,4 +111,62 @@ addNumbers();
 
 // 8.- Un servicio de atención al cliente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio una persona: Lunes - María; Martes - Luis; Miércoles - Antonia; Jueves - Pedro; Viernes - Marisa; Sábado y Domingo - Sin Servicio. Usa un array para almacenar los datos del servicio. En este array cada elemento será un par [día - nombre]. Crea una función que responda con el nombre de la persona encargada del servicio sabiendo el día. Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido servicio(Miércoles") me daría Antonia.
 
+function servicio() {
+  
+    let turnos = [
+        ["Lunes", "María"],
+        ["Martes", "Luis"],
+        ["Miércoles", "Antonia"],
+        ["Jueves", "Pedro"],
+        ["Viernes", "Marisa"],
+        ["Sábado", "Sin servicio"],
+        ["Domingo", "Sin servicio"]
+    ];
+
+    let dia = prompt("Ingrese el día de la semana:");
+
+
+    for (let i = 0; i < turnos.length; i++) {
+        if (turnos[i][0].toLowerCase() === dia) {
+
+            alert(`Este día se encarga ${turnos[i][1]}`);
+            return; 
+        }
+    }
+
+    alert("Este día no hay servicio");
+}
+
+
+servicio();
+
+
 // 9.- Una tienda vende monitores, teclados y ratones. Los precios se almacenan en una estructura array donde cada elemento es un par [producto - precio]. Diseña una función que reciba como argumento el nombre de un producto (minúscula o mayúscula) y devuelva su precio. Si la lista de precios es monitor: 200€, teclado: 20€ ratón: 10€, al pedir precio('monitor') me devolverá 200.
+
+function askPrecio() {
+
+    // function quitarTildes(texto) {
+    //     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // }
+
+    const precios = [
+        ["monitor", 200],
+        ["teclado", 20],
+        ["ratón", 10]
+    ];
+
+    let producto = prompt("Ingresa el nombre del producto cuyo precio deseas conocer:");
+
+    for (let i = 0; i < precios.length; i++) {
+        if (precios[i][0] === producto) {
+          
+            alert(`El precio del ${producto} es ${precios[i][1]}€`);
+            return;
+        }
+    }
+
+    alert("Producto no encontrado");
+}
+
+askPrecio();
+
